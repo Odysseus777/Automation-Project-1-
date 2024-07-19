@@ -1,5 +1,4 @@
 beforeEach(() => {
-    cy.viewport(800, 300)
     cy.visit('cypress/fixtures/registration_form_3.html')
 })
 /*
