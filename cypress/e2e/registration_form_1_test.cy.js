@@ -17,10 +17,12 @@ Assignment 2:
  */
 
 describe('This is first test suite, Mirando Kersman', () => {
-    it('User can submit data only when valid mandatory values are added', () => {
+    it.only('User can submit data only when valid mandatory values are added', () => {
         cy.get('[data-testid="phoneNumberTestId"]').type('555666777')
-        cy.get('input[name="password"]').type('MyOwnPWD')
-        cy.get('[name="confirm"]').type('MyOwnPWD')
+        cy.get('#firstName').type('Mirando')
+        cy.get('input[data-testid="lastNameTestId"]').type('Kersman')
+        cy.get('input[name="password"]').type('NewPWD')
+        cy.get('[name="confirm"]').type('NewPWD')
         cy.get('#username').type('Something')
         //in order to activate submit button, user has to click somewhere outside the input field
         cy.get('h2').contains('Password').click()
